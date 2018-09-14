@@ -3,4 +3,4 @@
 
 ## 学习笔记
 
-* [ES6 编译](https://github.com/Bongkai/webpack-practice/blob/master/notes/ES6.md)
+* [编译 ES6](https://github.com/Bongkai/webpack-practice/blob/master/notes/ES6.md)
