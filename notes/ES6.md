@@ -47,3 +47,13 @@ module.exports = {
   ]
 }
 ```
+
+* 其他可用插件：
+```
+// 全局 polyfill 插件：（多用于应用开发）
+$ npm i babel-polyfill -S
+
+// 局部 polyfill 插件：（多用于框架开发）
+$ npm i babel-runtime -S
+$ npm i babel-plugin-transform-runtime -D
+```
