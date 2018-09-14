@@ -16,6 +16,7 @@ $ npm i babel-preset-env -D
 * 配置代码：（关于 targets 的配置详情可查看 [browserslist](https://www.npmjs.com/package/browserslist)）
 ```
 // webpack.conf.js 代码
+
 module.exports = {
   ...,
   module: {
@@ -35,6 +36,7 @@ module.exports = {
 
 ```
 // .babelrc 代码
+
 {
   "presets": [
     ["@babel/preset-env", {
