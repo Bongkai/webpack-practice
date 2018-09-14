@@ -1,19 +1,6 @@
 # webpack-practice
-A practice repo for webpack learning.
+关于 Webpack 的学习笔记，持续更新中。
 
-## 编译 ES6
+## 学习笔记
 
-1. 安装 babel 核心：
-```
-$ npm i babel-loader babel-core -D
-
-// 最新版（下同，名称变动为：babel-xxx 改为 @babel/xxx）
-$ npm i @babel/loader @babel/core -D
-```
-
-2. 安装 ES6 编译插件：
-```
-$ npm i babel-preset-env -D
-```
-
-3. 安装
+* [ES6 编译](https://github.com/Bongkai/webpack-practice/blob/master/notes/ES6.md)
