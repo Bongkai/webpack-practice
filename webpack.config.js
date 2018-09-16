@@ -10,18 +10,19 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, './dist'),
+    publicPath: './dist/',
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js'
   },
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
-      minChunks: 2,
-      chunks: ['pageA', 'pageB']
+      async: 'async-common',
+      children: true,
+      minChunks: 2
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['vendor', 'manifest'],
+      names: ['vendor', 'manifest'],
       minChunks: Infinity
     })
   ]
