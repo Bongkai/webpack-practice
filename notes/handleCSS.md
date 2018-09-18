@@ -171,7 +171,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.sass$/,
+        test: /\.scss$/,
         use: [
           {
             loader: 'style-loader',

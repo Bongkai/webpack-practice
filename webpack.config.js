@@ -14,7 +14,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: [
           // 这里 loader 的顺序要注意，处理顺序为从后往前
           {
