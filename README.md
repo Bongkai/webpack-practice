@@ -7,3 +7,4 @@
 * [提取公共代码](https://github.com/Bongkai/webpack-practice/blob/master/notes/commonsChunk.md)
 * [代码分割（懒加载）](https://github.com/Bongkai/webpack-practice/blob/master/notes/lazyLoad.md)
 * [处理 CSS](https://github.com/Bongkai/webpack-practice/blob/master/notes/handleCSS.md)
+* [提取 CSS](https://github.com/Bongkai/webpack-practice/blob/master/notes/extractCSS.md)
