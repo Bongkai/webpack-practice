@@ -1,9 +1,12 @@
 import base from './css/base.css';
-import common from './css/common.css';
 
-const app = document.getElementById('app');
-app.innerHTML = '<div class="' + base.box + '"></div>';
+var app = document.getElementById('app');
+var div = document.createElement('div');
+div.className = 'smallBox';
+app.appendChild(div);
 
-import(/* webpackChunkName:'a' */ './components/a.js').then(a=> {
-  console.log(a);
-});
+import { a } from './common/util.js';
+console.log(a());
+
+import { chunk } from 'lodash';
+console.log(chunk([1,2,3,4,5,6,7], 2));
