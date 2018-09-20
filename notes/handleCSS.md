@@ -7,7 +7,7 @@
 所以打包时，需要使用 css-loader 和 style-loader 将 css 代码导入 js 文件并应用。
 
 ```shell
-$ npm i style-loader css-loader -D
+npm i style-loader css-loader -D
 ```
 
 ### 1. style-loader：在页面中创建一个 style 标签，将导入的 CSS 代码插入到指定位置
@@ -22,7 +22,7 @@ $ npm i style-loader css-loader -D
 
 <br/>
 
-示例代码：
+**示例代码**：
 
 ```js
 // webpack.config.js
@@ -85,14 +85,15 @@ module.exports = function(css) {
 * modules（启用 css-modules）
 
 (2) css-modules 常用语法：
-* :local  给定一个局部的样式
-* :global  给定一个全局的样式
-* compose  继承一段样式
-* compose ... from path  从路径为 path 的文件中引入某一个样式
+* :local    给定一个局部的样式
+* :global    给定一个全局的样式
+* compose    继承一段样式
+* compose ... from path    从路径为 path 的文件中引入某一个样式
 
 <br/>
 
-示例代码：
+**示例代码**：
+
 ```css
 /* base.css */
 
@@ -156,11 +157,11 @@ module.exports = {
 ## 配置 Less / Sass
 
 ```shell
-$ npm i less-loader less -D
-$ npm i sass-loader node-sass -D
+npm i less-loader less -D
+npm i sass-loader node-sass -D
 ```
 
-示例代码
+**示例代码**
 
 ```js
 module.exports = {

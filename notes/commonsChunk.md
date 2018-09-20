@@ -1,20 +1,23 @@
-## 提取公共代码
+# 提取公共代码
 
 可通过 webpack 的内置插件 webpack.optimize.CommonsChunkPlugin 来提取公共代码。
 
-### 应用场景
+## 应用场景
 
 1. 单页应用
 2. 单页应用 + 第三方依赖
 3. 单页应用 + 第三方依赖 + webpack 生成代码（webpack 打包后自身生成的内置函数等）
 
-### 配置须知
+## 配置须知
 
 1. 在没有进行懒加载的配置时，需要在 entry 设置多入口才能进行公共代码的提取。
 2. 可通过实例化多个 CommonsChunkPlugin 来进行复杂的提取操作。
 
-### 示例代码
+## 示例代码
+
 ```js
+// webpack.config.js
+
 const webpack = require('webpack');
 const path = require('path');
 

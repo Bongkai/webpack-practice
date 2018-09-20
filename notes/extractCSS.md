@@ -3,10 +3,11 @@
 可以通过 ExtractTextWebpackPlugin 来提取 CSS 文件：
 
 ```shell
-$ npm i extract-text-webpack-plugin -D
+npm i extract-text-webpack-plugin -D
 ```
 
 处理 CSS 的 loaders 需要使用 ExtractTextWebpackPlugin.extract() 来配置：
+
 ```js
 module: {
   rules: [
@@ -51,9 +52,8 @@ plugins 中 new ExtractTextWebpackPlugin() 的参数：
 
 * 提取功能模块其实也是一样的，就是把css文件放在js模块里面一起被提取的。
 
-<br/>
 
-示例代码：
+## 示例代码
 
 ```js
 // webpack.config.js

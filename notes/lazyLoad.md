@@ -1,16 +1,17 @@
-## 代码分割（懒加载）
+# 代码分割（懒加载）
 
-<!-- 可通过 webpack 的内置插件 webpack.optimize.CommonsChunkPlugin 来提取公共代码。 -->
+可通过 webpack 的内置插件 webpack.optimize.CommonsChunkPlugin 来提取公共代码。
 代码分割实际上不是通过配置 webpack 来实现的，而是通过改变写代码的方式来实现。
 （这部分其实还没怎么搞懂......）
 
-### 应用场景
+## 应用场景
 
 1. 分离业务代码 和 第三方依赖
 2. 分离业务代码 和 业务公共代码 和 第三方依赖
 3. 分离首次加载 和 访问后加载的代码
 
-### 方式一：webpack methods
+## 方式一：webpack methods
+
 ```js
 // 引入模块，在 dependencies 中引入（但不执行），需在 callback 中再次引入并执行
 require.ensure(dependencies, callback[, errorCallback, chunkName])
@@ -19,7 +20,8 @@ require.ensure(dependencies, callback[, errorCallback, chunkName])
 require.include(commonModulePath)
 ```
 
-示例代码：
+**示例代码**：
+
 ```js
 // 把之后要引入的模块中的公共模块先加载进来
 require.include('./moduleA.js');
@@ -40,7 +42,8 @@ require.ensure(['lodash'], ()=> {
 }, 'vendor');
 ```
 
-### 方式二：ES 2015 Loader Spec
+## 方式二：ES 2015 Loader Spec
+
 ```js
 import(commonModulePath)    // => Promise 对象
 
@@ -51,7 +54,8 @@ import(
 )
 ```
 
-示例代码：
+**示例代码**：
+
 ```js
 // pageA.js
 
