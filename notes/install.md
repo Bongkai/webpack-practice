@@ -1,6 +1,6 @@
 # 安装使用
 
-## 安装
+## webpack 安装
 
 想要全局执行 webpack 命令：
 ```shell
@@ -27,7 +27,7 @@ webpack
 webpack --config `customFilename`
 ```
 
-## 在项目中使用 Webpack
+## 在项目中使用 webpack
 
 如果想统一版本或者想在项目中引入 webpack 对象：
 ```shell
