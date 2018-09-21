@@ -1,4 +1,5 @@
 import base from './css/base.css';
+import common from './css/common.css';
 
 var app = document.getElementById('app');
 var div = document.createElement('div');
@@ -7,6 +8,3 @@ app.appendChild(div);
 
 import { a } from './common/util.js';
 console.log(a());
-
-import { chunk } from 'lodash';
-console.log(chunk([1,2,3,4,5,6,7], 2));

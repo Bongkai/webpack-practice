@@ -1,6 +1,23 @@
-const Webpack = require('webpack');
-const path = require('path');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+# 图片处理
+
+* file-loader
+* url-loader
+* img-loader（未完成）
+* postcss-sprites（未完成）
+
+## file-loader & url-loader
+
+url-loader 是在 file-loader 的基础上，加上 limit 参数控制是否把图片转成 base64 格式。
+
+```shell
+$ npm i file-loader -D
+# 或者
+$ npm i url-loader -D
+```
+
+## 示例代码
+
+```js
 const PurifyCSS = require('purifycss-webpack');
 const glob = require('glob-all');
 
@@ -10,7 +27,7 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist'),
     publicPath: 'dist/',
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js'
@@ -39,21 +56,13 @@ module.exports = {
       {
         test: /\.(jpg|png|jpeg|gif)$/,
         use: [
-          // {
-          //   loader: 'file-loader',
-          //   options: {
-          //     name: '[name]_[hash:8].[ext]',
-          //     publicPath: '../assets/imgs/',
-          //     useRelativePath: true
-          //   }
-          // },
           {
             loader: 'url-loader',
             options: {
               name: '[name]_[hash:8].[ext]',
-              // outputPath: 'assets/imgs/',
+              // publicPath：默认为 output.publicPath，若这里指定则覆盖
               publicPath: '../assets/imgs/',
-              // 为每个文件生成一个相对 URL 的路径
+              // 为每个文件生成一个相对 URL 的路径，默认为 false
               useRelativePath: true,
               limit: 10000
             }
@@ -65,35 +74,13 @@ module.exports = {
           //   options: {
           //     name: '[name]_[hash:8].[ext]',
           //     outputPath: 'assets/imgs/',
-          //     // publicPath：默认为 output.publicPath
           //     publicPath: '../assets/imgs/',
-          //     // useRelativePath: true,
+          //     useRelativePath: false,
           //     limit: 10000
-          //   }
-          // },
-
-          // {
-          //   loader: 'img-loader',
-          //   options: {
-          //     pngquant: {
-          //       quality: 80
-          //     }
           //   }
           // }
         ]
-      },
-      // {
-      //   test: /\.js$/,
-      //   use: [
-      //     {
-      //       loader: 'babel-loader',
-      //       options: {
-      //         presets: ['@babel/env'],  // ['env']
-      //         plugins: ['lodash']
-      //       }
-      //     }
-      //   ]
-      // }
+      }
     ]
   },
 
@@ -111,3 +98,6 @@ module.exports = {
     new Webpack.optimize.UglifyJsPlugin()
   ]
 };
+```
+
+

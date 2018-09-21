@@ -1,0 +1,36 @@
+body {
+  font-size: 20px;
+}
+
+.bigBox {
+  width: 400px;
+  height: 400px;
+  border: 5px solid #333;
+  color: #333;
+}
+
+.bigBox div {
+  width: 70px;
+  height: 100px;
+  float: left;
+}
+
+.bigBox .pic1 {
+  background: url('../assets/imgs/1.png') no-repeat;
+  background-size: 70px 100px;
+}
+
+.bigBox .pic2 {
+  background: url('../assets/imgs/2.png') no-repeat;
+  background-size: 70px 100px;
+}
+
+.bigBox .pic3 {
+  background: url('../assets/imgs/3.png') no-repeat;
+  background-size: 70px 100px;
+}
+
+.bigBox .pic4 {
+  background: url('../assets/imgs/4.png') no-repeat;
+  background-size: 70px 100px;
+}
