@@ -11,6 +11,7 @@ url-loader 是在 file-loader 的基础上，加上 limit 参数控制是否把�
 
 ```shell
 $ npm i file-loader -D
+
 # 或者
 $ npm i url-loader -D
 ```

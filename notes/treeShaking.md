@@ -27,7 +27,7 @@ webpack 在打包时会自动帮我们把代码标示为 **已使用的** 和 **
 **注**：某些第三方库如 Lodash 并不能直接通过 Tree Shaking 进行多余代码的移除，需要安装插件来解决：
 
 ```shell
-npm i babel-plugin-lodash -D    # 记得安装 babel 核心插件
+$ npm i babel-plugin-lodash -D    # 记得安装 babel 核心插件
 ```
 
 ## CSS 的 Tree Shaking 操作
@@ -35,7 +35,7 @@ npm i babel-plugin-lodash -D    # 记得安装 babel 核心插件
 可以使用 PurifyCSS 插件来移除多余的 CSS 代码。<br/>
 
 ```shell
-npm i purifycss-webpack -D
+$ npm i purifycss-webpack -D
 ```
 
 PurifyCSS 的 options:
@@ -44,7 +44,7 @@ PurifyCSS 的 options:
 使用 glob-all 插件的 sync() 能同时加载多个路径的 CSS 文件：
 
 ```shell
-npm i glob-all -D
+$ npm i glob-all -D
 ```
 
 <br/>

@@ -15,16 +15,16 @@ npm i webpack webpack-cli -g
 
 ```shell
 # 查看版本
-webpack --version
+$ webpack --version
 
 # 查看帮助
-webpack --help
+$ webpack --help
 
 # 执行打包（配置文件默认为 webpack.config.js）
-webpack
+$ webpack
 
 # 执行打包（自定义配置文件名）
-webpack --config `customFilename`
+$ webpack --config `customFilename`
 ```
 
 ## 在项目中使用 webpack
@@ -32,12 +32,12 @@ webpack --config `customFilename`
 如果想统一版本或者想在项目中引入 webpack 对象：
 ```shell
 # 如果是新建项目，要先创建 package.json
-npm init
+$ npm init
 
 # 安装作为项目依赖的 webpack
-npm i webpack@3.10.0 -D
+$ npm i webpack@3.10.0 -D
 # 或者 v4.x
-npm i webpack webpack-cli -D
+$ npm i webpack webpack-cli -D
 ```
 
 然后就可以在配置文件中引入：

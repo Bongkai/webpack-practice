@@ -3,7 +3,7 @@
 可以通过 ExtractTextWebpackPlugin 来提取 CSS 文件：
 
 ```shell
-npm i extract-text-webpack-plugin -D
+$ npm i extract-text-webpack-plugin -D
 ```
 
 处理 CSS 的 loaders 需要使用 ExtractTextWebpackPlugin.extract() 来配置：
