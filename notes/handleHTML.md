@@ -1,3 +1,30 @@
+# 处理 HTML
+
+## 自动生成 HTML
+
+HtmlWebpackPlugin
+
+options
+* template
+* filename
+* minify
+* chunks
+* inject
+
+## 在 HTML 中引入图片
+
+### html-loader
+
+options
+* attrs: 默认值为 ['img:src']，可以加上其他属性如 ['img:src', 'img:data-src'] 等
+
+### src = ${require('path')}
+
+## 示例代码
+
+```js
+// webpack.config.js
+
 const Webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -40,17 +67,6 @@ module.exports = {
       {
         test: /\.(jpg|png|jpeg|gif)$/,
         use: [
-          // {
-          //   loader: 'file-loader',
-          //   options: {
-          //     name: '[name]_[hash:8].[ext]',
-          //     // outputPath: 'assets/imgs/',
-          //     publicPath: '../assets/imgs/',
-          //     useRelativePath: true,
-          //   }
-          // },
-
-          // 不设置 useRelativePath 的写法
           {
             loader: 'file-loader',
             options: {
@@ -70,18 +86,6 @@ module.exports = {
           }
         ]
       },
-      // {
-      //   test: /\.js$/,
-      //   use: [
-      //     {
-      //       loader: 'babel-loader',
-      //       options: {
-      //         presets: ['@babel/env'],  // ['env']
-      //         plugins: ['lodash']
-      //       }
-      //     }
-      //   ]
-      // },
       {
         test: /\.html$/,
         use: [
@@ -117,3 +121,5 @@ module.exports = {
     new Webpack.optimize.UglifyJsPlugin()
   ]
 };
+```
+
