@@ -11,3 +11,4 @@
 * [摇树优化（Tree Shaking）](https://github.com/Bongkai/webpack-practice/blob/master/notes/treeShaking.md)
 * [图片处理](https://github.com/Bongkai/webpack-practice/blob/master/notes/handleImg.md)
 * [处理 HTML](https://github.com/Bongkai/webpack-practice/blob/master/notes/handleHTML.md)
+* [搭建开发服务器](https://github.com/Bongkai/webpack-practice/blob/master/notes/service.md)
