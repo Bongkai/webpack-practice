@@ -10,6 +10,7 @@
 * [提取 CSS](https://github.com/Bongkai/webpack-practice/blob/master/notes/extractCSS.md)
 * [摇树优化（Tree Shaking）](https://github.com/Bongkai/webpack-practice/blob/master/notes/treeShaking.md)
 * [图片处理](https://github.com/Bongkai/webpack-practice/blob/master/notes/handleImg.md)
+* [处理其他文件（第三方库，字体文件）](https://github.com/Bongkai/webpack-practice/blob/master/notes/handleOtherFiles.md)
 * [处理 HTML](https://github.com/Bongkai/webpack-practice/blob/master/notes/handleHTML.md)
 * [搭建开发服务器](https://github.com/Bongkai/webpack-practice/blob/master/notes/service.md)
 * [Source Map 调试](https://github.com/Bongkai/webpack-practice/blob/master/notes/sourceMap.md)
