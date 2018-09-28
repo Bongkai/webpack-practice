@@ -18,7 +18,7 @@ module.exports = {
   devtool: 'eval',    // 或者其他值
 
   module: { /* ...... */ },
-  plugins: { /* ...... */ },
+  plugins: [ /* ...... */ ],
 }
 ```
 
@@ -74,7 +74,7 @@ module.exports = {
       /* 其他 loaders */
   },
 
-  plugins: { /* ...... */ },
+  plugins: [ /* ...... */ ],
 }
 ```
 
