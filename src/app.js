@@ -1,6 +1,7 @@
 import base from './css/base.css';
 import common from './css/common.css';
 import { componentA } from './components/a.js';
+import { a } from './common/util.js';
 
 const app = document.getElementById('app');
 // const div = document.createElement('div');
@@ -9,7 +10,6 @@ let list = componentA();
 // app.appendChild(div);
 app.appendChild(list);
 
-import { a } from './common/util.js';
 console.log(a());
 
 // const api = 'https://m.weibo.cn/api/comments/show?id=4193586758833502&page=1';

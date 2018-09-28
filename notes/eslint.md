@@ -1,3 +1,40 @@
+# 配置 ESLint
+
+设置 ESLint 的规则可以帮我们检查代码格式，在开发时统一编写规范。
+
+```shell
+$ npm i eslint eslint-loader eslint-plugin-html -D
+$ npm i eslint-friendly-formatter -D
+```
+
+## ESLint 的使用
+
+（1） 在处理 js 的 rule 中使用 eslint-loader
+（2） 编写 .eslintrc.js 或 设置 package.json 中的 eslintConfig
+
+选择一种规范，如 JavaScript Standard Style (https://standardjs.com)
+
+```shell
+$ npm i eslint-config-standard -D
+$ npm i eslint-plugin-standard eslint-plugin-promise -D
+$ npm i eslint-plugin-import eslint-plugin-node -D
+```
+
+还有其他规范可搜索 eslint-config-xxx。
+
+eslint-loader.options：
+* failOnWarning
+* failOnError
+* formatter
+* outputReport
+
+**Tips**：设置 devServer.overlay 为 true 来使 eslint 的报错提示显示在页面上，方便调试。
+
+## 示例代码
+
+```js
+// webpack.config.js
+
 const Webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
@@ -58,8 +95,6 @@ module.exports = {
           {
             loader: 'style-loader',
             options: {
-              // singleton 设为 true 时不能开启 CSS Source Map
-              // singleton: true,
               sourceMap: true
             }
           },
@@ -71,39 +106,9 @@ module.exports = {
           }
         ]
       },
-      // HMR 时不能使用 ExtractTextWebpackPlugin，否则 CSS 的修改不能触发热更新
-      // {
-      //   test: /\.css$/,
-      //   use: ExtractTextWebpackPlugin.extract({
-      //     // 当不提取时使用下列方法来处理 CSS
-      //     fallback: {
-      //       loader: 'style-loader',
-      //       options: {
-      //         singleton: true
-      //       }
-      //     },
-      //     // 如果提取成单独文件的话还需要使用下列方法去处理
-      //     use: [
-      //       {
-      //         loader: 'css-loader'
-      //       }
-      //     ]
-      //   })
-      // },
       {
         test: /\.(jpg|png|jpeg|gif)$/,
         use: [
-          // {
-          //   loader: 'file-loader',
-          //   options: {
-          //     name: '[name]_[hash:8].[ext]',
-          //     // outputPath: 'assets/imgs/',
-          //     publicPath: '../assets/imgs/',
-          //     useRelativePath: true,
-          //   }
-          // },
-
-          // 不设置 useRelativePath 的写法
           {
             loader: 'file-loader',
             options: {
@@ -167,11 +172,6 @@ module.exports = {
       }
     }),
 
-    // new ExtractTextWebpackPlugin({
-    //   filename: 'css/[name]_[hash:8].min.css'
-    // }),
-
-    // PurifyCSS 必须放在 ExtractTextWebpackPlugin 的后面
     new PurifyCSS({
       paths: glob.sync([
         path.join(__dirname, './*.html'),
@@ -192,3 +192,37 @@ module.exports = {
     // }),
   ],
 };
+```
+
+```js
+// .eslintrc.js
+
+module.exports = {
+  root: true,
+  extends: 'standard',
+  plugins: [
+    'html'
+  ],
+  env: {
+    browser: true
+  },
+  // 对 jQuery 等一些全局变量的配置
+  // globals: {
+  //   $: true
+  // },
+  rules: {
+    'semi': [0],
+    'react/jsx-filename-extension': [0],
+    'react/jsx-one-expression-per-line': [0],
+    'arrow-spacing': [0],
+    'keyword-spacing': [0],
+    'import/extensions': [0],
+    'padded-blocks': [0],
+    'jsx-quotes': [0],
+    'no-unused-expressions': [0],
+    'react/destructuring-assignment': [0],
+    'space-before-function-paren': [0],
+    'no-unused-vars': [0]
+  }
+};
+```
