@@ -10,6 +10,8 @@ let list = componentA();
 // app.appendChild(div);
 app.appendChild(list);
 
+$('div').addClass('new');
+
 console.log(a());
 
 // const api = 'https://m.weibo.cn/api/comments/show?id=4193586758833502&page=1';

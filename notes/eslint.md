@@ -9,8 +9,8 @@ $ npm i eslint-friendly-formatter -D
 
 ## ESLint 的使用
 
-（1） 在处理 js 的 rule 中使用 eslint-loader
-（2） 编写 .eslintrc.js 或 设置 package.json 中的 eslintConfig
+1. 在处理 js 的 rule 中使用 eslint-loader
+2. 编写 .eslintrc.js 或 设置 package.json 中的 eslintConfig
 
 选择一种规范，如 JavaScript Standard Style (https://standardjs.com)
 

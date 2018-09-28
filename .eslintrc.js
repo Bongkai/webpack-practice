@@ -7,9 +7,9 @@ module.exports = {
   env: {
     browser: true
   },
-  // globals: {
-  //   $: true
-  // },
+  globals: {
+    $: true
+  },
   rules: {
     'semi': [0],
     'react/jsx-filename-extension': [0],

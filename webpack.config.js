@@ -19,6 +19,12 @@ module.exports = {
     chunkFilename: '[name].chunk.js'
   },
 
+  resolve: {
+    alias: {
+      jquery$: path.resolve(__dirname, 'src/libs/jquery-3.3.1.min.js')
+    }
+  },
+
   devServer: {
     port: 9001,
     hot: true,
@@ -124,6 +130,19 @@ module.exports = {
         ]
       },
       {
+        test: /\.(eot|woff2?|ttf|svg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[name]_[hash:8].[ext]',
+              outputPath: 'assets/fonts/',
+              limit: 5000
+            }
+          },
+        ]
+      },
+      {
         test: /\.js$/,
         include: [path.resolve(__dirname, 'src')],
         exclude: [path.resolve(__dirname, 'src/libs')],
@@ -155,6 +174,17 @@ module.exports = {
           }
         ]
       },
+      // {
+      //   test: path.resolve(__dirname, 'src/app.js'),
+      //   use: [
+      //     {
+      //       loader: 'imports-loader',
+      //       options: {
+      //         $: 'jquery'
+      //       }
+      //     }
+      //   ]
+      // }
     ]
   },
 
@@ -187,8 +217,9 @@ module.exports = {
 
     new Webpack.NamedModulesPlugin(),
 
-    // new Webpack.ProvidePlugin({
-    //   $: 'jquery'
-    // }),
+    new Webpack.ProvidePlugin({
+      // 解析时会先去找 node_modules 对应的模块，没有的话就去找 resolve.alias 指定的文件
+      $: 'jquery'
+    }),
   ],
 };
